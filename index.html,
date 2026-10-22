@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MO DISPATCH | Professional Trucking Dispatch Services</title>
+    <meta name="description" content="US-based truck dispatch service for Owner-Operators. Dry Van, Reefer, Box Truck & Cargo Van coverage in Midwest, East Coast & South. Free 7-day trial.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons (Free CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           CSS VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-gold: #FFC107; /* Matches logo gold */
+            --primary-dark: #0A0A0A; /* Matches logo black */
+            --secondary-dark: #1A1A1A;
+            --text-light: #F3F4F6;
+            --text-gray: #9CA3AF;
+            --white: #FFFFFF;
+            --accent-blue: #3B82F6; /* Trustworthy blue accent */
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .text-center { text-align: center; }
+        .text-gold { color: var(--primary-gold); }
+        .text-white { color: var(--white); }
+
+        /* =========================================
+           BUTTONS
+           ========================================= */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 193, 7, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+        }
+
+        /* =========================================
+           HEADER & NAVIGATION
+           ========================================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 193, 7, 0.1);
+            padding: 0.8rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* PLACEHOLDER FOR YOUR LOGO IMAGE */
+        .logo-img {
+            height: 50px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--primary-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.9)), 
+                        url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(255, 193, 7, 0.1);
+            color: var(--primary-gold);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* =========================================
+           SERVICES SECTION
+           ========================================= */
+        .services {
+            background-color: var(--secondary-dark);
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--primary-dark);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary-gold);
+            transform: scaleY(0);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 193, 7, 0.2);
+        }
+
+        .service-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 193, 7, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           EQUIPMENT SECTION
+           ========================================= */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .equip-card {
+            position: relative;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            group: true;
+        }
+
+        .equip-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .equip-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .equip-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+        }
+
+        .equip-overlay h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+        }
+
+        .equip-overlay p {
+            color: var(--primary-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* =========================================
+           COVERAGE MAP / INFO SECTION
+           ========================================= */
+        .coverage {
+            background-color: var(--secondary-dark);
+            position: relative;
+        }
+
+        .coverage-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .coverage-image {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 193, 7, 0.2);
+        }
+
+        .coverage-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .coverage-list i {
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+        }
+
+        /* =========================================
+           CTA / TRIAL SECTION
+           ========================================= */
+        .trial-section {
+            background: linear-gradient(135deg, var(--primary-gold), #E6AC00);
+            color: var(--primary-dark);
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .trial-section h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .trial-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .btn-dark {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            border: 2px solid var(--primary-dark);
+        }
+
+        .btn-dark:hover {
+            background-color: transparent;
+            color: var(--primary-dark);
+        }
+
+        /* =========================================
+           CONTACT SECTION
+           ========================================= */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 193, 7, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--text-gray);
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: var(--primary-gold);
+        }
+
+        .contact-form {
+            background-color: var(--secondary-dark);
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background-color: #050505;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-gray);
+            margin-top: 1rem;
+            max-width: 300px;
+            font-size: 0.9rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        /* =========================================
+           MOBILE RESPONSIVENESS
+           ========================================= */
+        @media (max-width: 992px) {
+            .coverage-wrapper, .contact-grid, .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero {
+                text-align: center;
+                justify-content: center;
+            }
+            
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--primary-dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: var(--transition);
+                border-top: 1px solid rgba(255, 193, 7, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo-container">
+                    <!-- REPLACE src BELOW WITH YOUR LOGO FILE PATH AFTER UPLOADING -->
+                    <img src="https://via.placeholder.com/100x100/000000/FFC107?text=MO" alt="MO Dispatch Logo" class="logo-img" id="site-logo">
+                    <div class="logo-text">MO <span>DISPATCH</span></div>
+                </a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                    <li><a href="#equipment" onclick="closeMenu()">Equipment</a></li>
+                    <li><a href="#coverage" onclick="closeMenu()">Coverage</a></li>
+                    <li><a href="#about" onclick="closeMenu()">About</a></li>
+                    <li><a href="#contact" onclick="closeMenu()" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get Started</a></li>
+                </ul>
+
+                <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-star"></i> Free 7-Day Trial Available</span>
+                <h1>Keep Your Wheels Moving & <span class="text-gold">Profits Growing</span></h1>
+                <p>Professional US dispatch services for Owner-Operators. We handle load booking, rate negotiation, paperwork, and billing so you can focus on driving.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Request Free Trial</a>
+                    <a href="#services" class="btn btn-outline">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Complete Dispatch <span class="text-gold">Support</span></h2>
+                <p>From finding high-paying loads to handling back-office paperwork, we manage every detail of your freight operations.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-search-location"></i></div>
+                    <h3>Load Searching & Booking</h3>
+                    <p>We scour major load boards and broker networks to find the highest paying freight that matches your route preferences and equipment type.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Rate Negotiation</h3>
+                    <p>Our experienced dispatchers negotiate aggressively with brokers to secure top dollar per mile and ensure fair detention and layover pay.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3>Paperwork Management</h3>
+                    <p>We handle all rate confirmations, BOLs, POD submissions, and invoicing. Never worry about missing paperwork or delayed payments again.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Broker Communication</h3>
+                    <p>We serve as your single point of contact with brokers, handling check-calls, updates, and issue resolution while you stay on the road.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Billing & Settlements</h3>
+                    <p>Accurate invoicing and settlement tracking. We ensure you get paid correctly and on time, with detailed breakdowns of every load.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-route"></i></div>
+                    <h3>Driver Coordination</h3>
+                    <p>Strategic trip planning and route optimization to minimize deadhead miles and maximize your revenue per week.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EQUIPMENT SECTION ==================== -->
+    <section id="equipment" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Equipment We <span class="text-gold">Dispatch</span></h2>
+                <p>Specialized support for all major trailer types across the United States.</p>
+            </div>
+
+            <div class="equipment-grid">
+                <div class="equip-card">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dry Van Trailer">
+                    <div class="equip-overlay">
+                        <p>Most Popular</p>
+                        <h3>Dry Van</h3>
+                    </div>
+                </div>
+
+                <div class="equip-card">
+                    <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Reefer Trailer">
+                    <div class="equip-overlay">
+                        <p>Temperature Controlled</p>
+                        <h3>Reefer</h3>
+                    </div>
+                </div>
+
+                <div class="equip-card">
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Box Truck">
+                    <div class="equip-overlay">
+                        <p>Straight Truck</p>
+                        <h3>Box Truck</h3>
+                    </div>
+                </div>
+
+                <div class="equip-card">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cargo Van">
+                    <div class="equip-overlay">
+                        <p>Expedited Freight</p>
+                        <h3>Cargo Van</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COVERAGE SECTION ==================== -->
+    <section id="coverage" class="coverage section-padding">
+        <div class="container">
+            <div class="coverage-wrapper">
+                <div class="coverage-image">
+                    <img src="https://images.unsplash.com/photo-1495539406979-bf61750d38ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="US Highway Trucking">
+                </div>
+                <div class="coverage-content">
+                    <h2>Nationwide Coverage, <br><span class="text-gold">Regional Expertise</span></h2>
+                    <p style="color: var(--text-gray); margin-bottom: 2rem;">While we book freight across all 48 contiguous states, our deep market knowledge in these key regions ensures you always get the best lanes and rates.</p>
+                    
+                    <ul class="coverage-list">
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Midwest:</strong> Chicago, Detroit, Indianapolis, Minneapolis hubs</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>East Coast:</strong> NYC, Philadelphia, Atlanta, Miami corridors</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Southern US:</strong> Dallas, Houston, Nashville, Charlotte lanes</li>
+                    </ul>
+
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Start Hauling Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="section-padding" style="background-color: var(--secondary-dark);">
+        <div class="container text-center" style="max-width: 800px;">
+            <h2 style="margin-bottom: 1.5rem;">Why Choose <span class="text-gold">MO DISPATCH?</span></h2>
+            <p style="color: var(--text-gray); font-size: 1.1rem; margin-bottom: 2rem;">
+                We are a dedicated team of US-based dispatch professionals who understand the trucking industry from the ground up. We don't just book loads—we build partnerships with owner-operators to help them grow sustainable, profitable businesses. Our commitment is simple: transparent communication, aggressive rate negotiation, and reliable back-office support.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 3rem;">
+                <div>
+                    <h3 class="text-gold" style="font-size: 2.5rem;">24/7</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Support Availability</p>
+                </div>
+                <div>
+                    <h3 class="text-gold" style="font-size: 2.5rem;">US-Based</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Dispatch Team</p>
+                </div>
+                <div>
+                    <h3 class="text-gold" style="font-size: 2.5rem;">No Contracts</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Month-to-Month</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FREE TRIAL CTA ==================== -->
+    <section class="trial-section">
+        <div class="container">
+            <h2>Try Us Risk-Free for 7 Days</h2>
+            <p>No credit card required. No long-term contracts. Experience professional dispatch service and see the difference in your weekly revenue.</p>
+            <a href="#contact" class="btn btn-dark">Claim Your Free Trial</a>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Get In <span class="text-gold">Touch</span></h2>
+                <p>Ready to boost your earnings? Contact us today to set up your free 7-day trial or ask any questions.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-details">
+                            <h4>Call Us</h4>
+                            <!-- REPLACE WITH YOUR ACTUAL PHONE NUMBER -->
+                            <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                            <p style="font-size: 0.85rem; margin-top: 0.3rem;">Mon-Sat: 7AM - 8PM EST</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h4>Email Us</h4>
+                            <!-- REPLACE WITH YOUR ACTUAL EMAIL ADDRESS -->
+                            <a href="mailto:info@modispatch.com">info@modispatch.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <!-- REPLACE WITH YOUR ACTUAL WHATSAPP NUMBER -->
+                            <a href="https://wa.me/15551234567">+1 (555) 123-4567</a>
+                            <p style="font-size: 0.85rem; margin-top: 0.3rem;">Quick responses guaranteed</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 7:00 AM - 8:00 PM EST<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--white);">Send Us a Message</h3>
+                    <!-- NOTE: This form uses mailto: as a simple no-backend solution. For production, consider Formspree or Netlify Forms -->
+                    <form action="mailto:YOUR_EMAIL_HERE" method="post" enctype="text/plain" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="John Doe">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+1 (555) 000-0000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="equipment">Equipment Type</label>
+                            <select id="equipment" name="equipment" class="form-control">
+                                <option value="">Select Equipment...</option>
+                                <option value="dry-van">Dry Van</option>
+                                <option value="reefer">Reefer</option>
+                                <option value="box-truck">Box Truck</option>
+                                <option value="cargo-van">Cargo Van</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Tell us about your fleet and what you're looking for..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        <p style="font-size: 0.8rem; color: var(--text-gray); margin-top: 1rem; text-align: center;">* Required fields. We'll respond within 24 hours.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-container">
+                        <div class="logo-text">MO <span>DISPATCH</span></div>
+                    </div>
+                    <p>Professional US truck dispatch services helping owner-operators maximize revenue and minimize stress. Your success is our mission.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#equipment">Equipment</a></li>
+                        <li><a href="#coverage">Coverage Area</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> MO DISPATCH. All rights reserved. | Designed for US Owner-Operators</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when link clicked
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler (for mailto fallback UX)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Note: mailto forms open email client. For better UX, consider using Formspree.io (free tier)
+            setTimeout(() => {
+                alert('Thank you! Your email client should open now. If it doesn\'t, please contact us directly via phone or WhatsApp.');
+                this.reset();
+            }, 500);
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
